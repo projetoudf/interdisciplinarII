@@ -17,8 +17,7 @@
       <?php include "menu.php";
       ?>
 
-
-    <h4>Este é o arquivo base. Ele já contêm o bootstrap, jquery, popper do bootstrap 4.0 e um menu. Utilize como base para novas páginas.</h4>
+        <h4>Este é o arquivo base. Ele já contêm o bootstrap, jquery, popper do bootstrap 4.0 e um menu. Utilize como base para novas páginas.</h4>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
