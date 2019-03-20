@@ -19,6 +19,10 @@
 
         <h4>Este é o arquivo base. Ele já contêm o bootstrap, jquery, popper do bootstrap 4.0 e um menu. Utilize como base para novas páginas.</h4>
 
+
+
+        <?php include "footer.php";
+      ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

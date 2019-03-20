@@ -15,11 +15,10 @@
 
     <style>
         .banner{
-            height: 70vh;
+            height: 60vh;
             width: 100%;
-            background-image: url("title.jpg");
+            background-image: url("img/title.jpg");
             background-size: 100% 100%;
-            background-position: 50% 50%;
             background-repeat: no-repeat;
         }
         .posts {
@@ -48,9 +47,29 @@
                 <div class="col-sm-4 border">A nível organizacional, a consolidação das estruturas acarreta um processo de reformulação e modernização do levantamento das variáveis envolvidas.
 </div>
             </div>
+            <div class="row">
+                <div class="col-sm-8 border">A nível organizacional, a consolidação das estruturas acarreta um processo de reformulação e modernização do levantamento das variáveis envolvidas.
+</div>
+                <div class="col-sm-4 border">A nível organizacional, a consolidação das estruturas acarreta um processo de reformulação e modernização do levantamento das variáveis envolvidas.
+</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 border">A nível organizacional, a consolidação das estruturas acarreta um processo de reformulação e modernização do levantamento das variáveis envolvidas.
+</div>
+                <div class="col-sm-4 border">A nível organizacional, a consolidação das estruturas acarreta um processo de reformulação e modernização do levantamento das variáveis envolvidas.
+</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 border">A nível organizacional, a consolidação das estruturas acarreta um processo de reformulação e modernização do levantamento das variáveis envolvidas.
+</div>
+                <div class="col-sm-4 border">A nível organizacional, a consolidação das estruturas acarreta um processo de reformulação e modernização do levantamento das variáveis envolvidas.
+</div>
+            </div>
         </div>
 
 
+        <?php include "footer.php";
+      ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
