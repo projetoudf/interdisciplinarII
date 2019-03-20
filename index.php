@@ -20,11 +20,11 @@
             height: 60vh;
             width: 100%;
             background-image: url("img/title.jpg");
-            background-size: 100% 100%;
+            background-size: cover;
             background-repeat: no-repeat;
         }
         .posts {
-            height: 30vh;
+            height: 50vh;
             width: 100%;
         }
     </style>
