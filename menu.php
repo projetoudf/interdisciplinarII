@@ -22,3 +22,4 @@
     </ul>
   </div>
 </nav>
+<?php include "modal_login.php"; ?>

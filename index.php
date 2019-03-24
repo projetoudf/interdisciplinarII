@@ -71,7 +71,6 @@
 
 
         <?php 
-        include "modal_login.php";
         include "footer.php";
       ?>
     <!-- Optional JavaScript -->
