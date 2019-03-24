@@ -70,7 +70,9 @@
         </div>
 
 
-        <?php include "footer.php";
+        <?php 
+        include "modal_login.php";
+        include "footer.php";
       ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

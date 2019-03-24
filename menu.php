@@ -1,5 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #F7D3E1; box-shadow: 1px 1px 9px 3px rgba(41,41,41,.25);
-;">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #F7D3E1; box-shadow: 1px 1px 9px 3px rgba(41,41,41,.25);">
   <a class="navbar-brand" href="#"><i class="fas fa-box-open"></i></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -15,6 +14,9 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Contato</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="modal" data-target="#login_modal" style="cursor:pointer;"><i class="fas fa-lock"></i></a>
       </li>
       
     </ul>
