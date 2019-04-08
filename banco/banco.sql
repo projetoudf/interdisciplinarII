@@ -1,7 +1,7 @@
 CREATE TABLE Usuario (
 Id_Usuario INT PRIMARY KEY,
 Senha VARCHAR(50),
-E-mail VARCHAR(50)
+Email VARCHAR(50)
 )
 
 CREATE TABLE Fotos (
@@ -14,7 +14,7 @@ CREATE TABLE Mensagem (
 Id_Mensagem INT PRIMARY KEY,
 Telefone VARCHAR(100),
 Nome_Cliente VARCHAR(100),
-E-mail VARCHAR(100),
+Email VARCHAR(100),
 Mensagem VARCHAR(2000),
 Id_Produto INT
 )
