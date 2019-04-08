@@ -1,5 +1,5 @@
-CREATE TABLE Usuário (
-Id_Usuário INT PRIMARY KEY,
+CREATE TABLE Usuario (
+Id_Usuario INT PRIMARY KEY,
 Senha VARCHAR(50),
 E-mail VARCHAR(50)
 )
@@ -26,8 +26,8 @@ Altura FLOAT,
 Largura FLOAT,
 Cor VARCHAR(100),
 Comprimento FLOAT,
-Id_Usuário INT,
-FOREIGN KEY(Id_Usuário) REFERENCES Usuário (Id_Usuário)
+Id_Usuario INT,
+FOREIGN KEY(Id_Usuario) REFERENCES Usuario (Id_Usuario)
 )
 
 ALTER TABLE Fotos ADD FOREIGN KEY(Id_Produto) REFERENCES Produto (Id_Produto)
