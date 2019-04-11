@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -20,7 +23,7 @@
       <?php include "menu.php";
       ?>
 
-contato
+sobre
 
 
         <?php include "footer.php";

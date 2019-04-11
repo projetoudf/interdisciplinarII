@@ -7,18 +7,26 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="index.php">Início <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/index.php">Início <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="sobre.php">Sobre nós</a>
+        <a class="nav-link" href="/sobre.php">Sobre nós</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="contato.php">Contato</a>
+        <a class="nav-link" href="/contato/contato.php">Contato</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" data-toggle="modal" data-target="#login_modal" style="cursor:pointer;"><i class="fas fa-lock"></i></a>
       </li>
-      
+      <?php if (isset($_SESSION['Email'])){ ?>
+      <li class="nav-item">
+        <a class="nav-link" href="/contato/mensagens.php">Mensagens <i class="far fa-comment-dots"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/logout.php"><i class="fas fa-sign-out-alt"></i> Sair</a>
+      </li>
+      <?php } ?>
+
     </ul>
   </div>
 </nav>

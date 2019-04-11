@@ -1,26 +1,26 @@
 CREATE TABLE Usuario (
-Id_Usuario INT PRIMARY KEY,
+Id_Usuario INT PRIMARY KEY AUTO_INCREMENT,
 Senha VARCHAR(50),
 Email VARCHAR(50)
-)
+);
 
 CREATE TABLE Fotos (
-Id_Fotos INT PRIMARY KEY,
+Id_Fotos INT PRIMARY KEY AUTO_INCREMENT,
 Imagem VARCHAR(100),
 Id_Produto INT
-)
+);
 
 CREATE TABLE Mensagem (
-Id_Mensagem INT PRIMARY KEY,
+Id_Mensagem INT PRIMARY KEY AUTO_INCREMENT,
 Telefone VARCHAR(100),
 Nome_Cliente VARCHAR(100),
 Email VARCHAR(100),
 Mensagem VARCHAR(2000),
 Id_Produto INT
-)
+);
 
 CREATE TABLE Produto (
-Id_Produto INT PRIMARY KEY,
+Id_Produto INT PRIMARY KEY AUTO_INCREMENT,
 Nome_Produto VARCHAR(100),
 Altura FLOAT,
 Largura FLOAT,
@@ -28,7 +28,7 @@ Cor VARCHAR(100),
 Comprimento FLOAT,
 Id_Usuario INT,
 FOREIGN KEY(Id_Usuario) REFERENCES Usuario (Id_Usuario)
-)
+);
 
-ALTER TABLE Fotos ADD FOREIGN KEY(Id_Produto) REFERENCES Produto (Id_Produto)
-ALTER TABLE Mensagem ADD FOREIGN KEY(Id_Produto) REFERENCES Produto (Id_Produto)
+ALTER TABLE Fotos ADD FOREIGN KEY(Id_Produto) REFERENCES Produto (Id_Produto);
+ALTER TABLE Mensagem ADD FOREIGN KEY(Id_Produto) REFERENCES Produto (Id_Produto);
