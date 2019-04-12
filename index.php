@@ -43,7 +43,8 @@
             <?php include "/produto/listarProduto.php"; ?>
         </div>
 
-      <?php 
+
+        <?php 
         include "footer.php";
       ?>
     <!-- Optional JavaScript -->
