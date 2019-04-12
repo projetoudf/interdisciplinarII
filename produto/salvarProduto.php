@@ -1,13 +1,14 @@
 <?php
 require "../conexao.php";
 if (isset($_REQUEST['nome'])){
-	$nome = mysqli_real_escape_string($conexao,$_REQUEST['nome']);
-	$email = mysqli_real_escape_string($conexao,$_REQUEST['email']); 
-	$mensagem = mysqli_real_escape_string($conexao,$_REQUEST['mensagem']);
-    $telefone = mysqli_real_escape_string($conexao,$_REQUEST['telefone']);
+	$nome = mysqli_real_escape_string($conexao,$_REQUEST['Nome']);
+	$cor = mysqli_real_escape_string($conexao,$_REQUEST['Cor']); 
+	$altura = mysqli_real_escape_string($conexao,$_REQUEST['Altura']);
+    $largura = mysqli_real_escape_string($conexao,$_REQUEST['Largura']);
+    $comprimento = mysqli_real_escape_string($conexao,$_REQUEST['Comprimento']);
 
 	
-    $sql = "INSERT INTO mensagem (Nome_Cliente, Email, Mensagem, Telefone) VALUES ('$nome','$email', '$mensagem', '$telefone');";
+    $sql = "INSERT INTO produto (Nome_Produto, Cor, Altura, Largura, Comprimento) VALUES ('$nome','$cor', '$altura', '$largura', '$comprimento');";
     $conexao->query($sql);
 		// success
 			if($sql){
