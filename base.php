@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- CSS CUSTOM -->
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="/css/estilo.css">
     
     <!-- Icones -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -17,14 +17,14 @@
     <title>Pingo de Amor</title>
   </head>
   <body>
-      <?php include "menu.php";
+      <?php include "/menu.php";
       ?>
 
         <h4>Este é o arquivo base. Ele já contêm o bootstrap, jquery, popper do bootstrap 4.0 e um menu. Utilize como base para novas páginas.</h4>
 
 
 
-        <?php include "footer.php";
+        <?php include "/footer.php";
       ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
