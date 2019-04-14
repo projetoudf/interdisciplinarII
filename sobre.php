@@ -28,12 +28,12 @@
 
   </head>
   <body>
-      <?php include "/menu.php";
+      <?php include ($_SERVER['DOCUMENT_ROOT']."/menu.php");
       ?>
       <div class="container-fluid">
         <div class="row">
           <div class="permissoes d-flex justify-content-center flex-wrap">
-            <h3 class="border rounded col-md-6 mt-5">Somos uma iniciativa familiar que começou como um hobbie e agora estamos expandindo o negócio.
+            <h3 class="border rounded col-md-6 mt-5" style="background-color: white;">Somos uma iniciativa familiar que começou como um hobbie e agora estamos expandindo o negócio.
               Nosso lema é trabalhar com amor. Tratamos todos os pedidos com o maior cuidado possível e prezamos pela excelência.
               Todos os produtos são pintados à mão, conforme solicitado pelo cliente.
               Esperamos que fiquem satisfeitos, e estamos aqui para qualquer questionamento!    
@@ -42,7 +42,7 @@
         </div>
       </div>
 
-        <?php include "/footer.php";
+        <?php include ($_SERVER['DOCUMENT_ROOT']."/footer.php");
       ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
