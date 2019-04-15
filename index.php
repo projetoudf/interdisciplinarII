@@ -43,7 +43,7 @@
   <body>
     <?php include "menu.php";
       ?>
-    <div class="banner">
+    <div class="banner sombra">
     </div>
 
     <div class="container-fluid">

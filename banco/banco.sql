@@ -25,6 +25,7 @@ Nome_Produto VARCHAR(100),
 Altura FLOAT,
 Largura FLOAT,
 Cor VARCHAR(100),
+Sobre VARCHAR(500),
 Comprimento FLOAT,
 Id_Usuario INT,
 FOREIGN KEY(Id_Usuario) REFERENCES Usuario (Id_Usuario)
