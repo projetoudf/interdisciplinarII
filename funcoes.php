@@ -4,7 +4,12 @@
 function make_hash($str){
   return sha1(md5($str));
 }
-$t = make_hash("1");
 // Função para renomear as imagens e salvar na pasta "img"
-//TODO pensar em uma nova maneira de renomear os arquivos, de modo que eles fiquem identificáveis.
-
+function upload_file($file)
+    {
+            $extension = explode('.', $file["name"]);
+            $new_name = uniqid($extension[0]) . '.' . $extension[1];
+            $destination = '../img/' . $new_name;
+            move_uploaded_file($file['tmp_name'], $destination);
+            return $new_name;
+		}

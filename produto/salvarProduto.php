@@ -2,16 +2,8 @@
 session_start();
 require "../conexao.php";
 include "../funcoes.php";
-function upload_file($file)
-    {
-            $extension = explode('.', $file["name"]);
-            $new_name = uniqid($extension[0]) . '.' . $extension[1];
-            $destination = '../img/' . $new_name;
-            move_uploaded_file($file['tmp_name'], $destination);
-            return $new_name;
-		}
 
-	$nome = mysqli_real_escape_string($conexao,$_REQUEST['Nome_Produto']);
+$nome = mysqli_real_escape_string($conexao,$_REQUEST['Nome_Produto']);
 	$cor = mysqli_real_escape_string($conexao,$_REQUEST['Cor']); 
 	$altura = mysqli_real_escape_string($conexao,$_REQUEST['Altura']);
   $largura = mysqli_real_escape_string($conexao,$_REQUEST['Largura']);
