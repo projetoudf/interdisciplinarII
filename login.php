@@ -11,6 +11,7 @@ $dados = mysqli_fetch_array($result);
 if($row == 1) {
     session_start();
     $_SESSION['Email'] = $dados['Email'];
+    $_SESSION['id']  =$dados['Id_Usuario'];
     header("Location: index.php");
     exit();
 } else {

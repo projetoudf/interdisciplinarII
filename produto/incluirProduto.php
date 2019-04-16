@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -22,9 +26,10 @@
 
 <body>
     <?php include "../menu.php";
+          include "../funcoes.php";
       ?>
     <br>
-    <form action="enviarMensagem.php" method="POST">
+    <form action="salvarProduto.php" enctype="multipart/form-data" method="POST">
         <h1 class="text-center">Inserir novo Anúncio:</h1><br>
         <div class="container">
             <div class="row">
@@ -40,7 +45,7 @@
             <div class="row">
                 <div class="form-group col-4">
                     <label>Altura</label>
-                    <input type="email" name="Altura" class="form-control" required>
+                    <input type="text" name="Altura" class="form-control" required>
                 </div>
                 <div class="form-group col-4">
                     <label>Largura</label>
@@ -51,8 +56,32 @@
                     <input type="text" name="Comprimento" class="form-control" required>
                 </div>
             </div>
-            !!!AQUI SERA INSERIDO O CAMPO PARA IMAGENS!!!
-    <div>
+            <div class="form-group">
+                <textarea class="form-control limiteDeCaracteres" id="Sobre" name="Sobre" rows="5" cols="20"
+                maxlength="500" placeholder="Descrição do produto.."></textarea>
+            </div>
+            <div class="form-group">
+                <div class="form-group col-md-5 custom-file">
+                    <label for="imagem1" class="custom-file-label"></label>
+                    <input type="file" class="custom-file-input" id="imagem1" name="imagem1" required>
+                </div>
+                <div class="form-group col-md-5 custom-file float-right">
+                    <label for="imagem2" class="custom-file-label"></label>
+                    <input type="file" class="custom-file-input" id="imagem2" name="imagem2" required>
+                </div>
+            </div>
+            <div class="form-group my-2">
+
+                <div class="form-group col-md-5 custom-file">
+                    <label for="imagem3" class="custom-file-label"></label>
+                    <input type="file" class="custom-file-input" id="imagem3" name="imagem3" required>
+                </div>
+                <div class="form-group col-md-5 custom-file float-right">
+                    <label for="imagem4" class="custom-file-label"></label>
+                    <input type="file" class="custom-file-input" id="imagem4" name="imagem4" required>
+                </div>
+                <p class="ml-auto" style="font-size: 0.7rem;">*as fotos devem ter a mesma proporção! (preferencialmente deitadas!)</p>
+            </div>    <div>
             <div class="form-group">
             <button type="submit" class="btn btn-lg btn-danger ml-auto">Cancelar</button>
 
@@ -75,6 +104,16 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+    <script type="text/javascript" src="../script.js"></script>
+
+    <script>
+    // Add the following code if you want the name of the file appear on select
+    $(".custom-file-input").on("change", function() {
+    var fileName = $(this).val().split("\\").pop();
+    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
+    </script>
+    
 </body>
 
 </html>

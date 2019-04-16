@@ -23,6 +23,9 @@
         <a class="nav-link" href="/contato/mensagens.php">Mensagens <i class="far fa-comment-dots"></i></a>
       </li>
       <li class="nav-item">
+        <a class="btn btn-info" href="/produto/incluirProduto.php">Incluir Produto <i class="fas fa-plus"></i></a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="/logout.php"><i class="fas fa-sign-out-alt"></i> Sair</a>
       </li>
       <?php } ?>

@@ -1,20 +1,43 @@
 <?php
+session_start();
 require "../conexao.php";
-if (isset($_REQUEST['nome'])){
-	$nome = mysqli_real_escape_string($conexao,$_REQUEST['Nome']);
+include "../funcoes.php";
+function upload_file($file)
+    {
+            $extension = explode('.', $file["name"]);
+            $new_name = uniqid($extension[0]) . '.' . $extension[1];
+            $destination = '../img/' . $new_name;
+            move_uploaded_file($file['tmp_name'], $destination);
+            return $new_name;
+		}
+
+	$nome = mysqli_real_escape_string($conexao,$_REQUEST['Nome_Produto']);
 	$cor = mysqli_real_escape_string($conexao,$_REQUEST['Cor']); 
 	$altura = mysqli_real_escape_string($conexao,$_REQUEST['Altura']);
-    $largura = mysqli_real_escape_string($conexao,$_REQUEST['Largura']);
-    $comprimento = mysqli_real_escape_string($conexao,$_REQUEST['Comprimento']);
+  $largura = mysqli_real_escape_string($conexao,$_REQUEST['Largura']);
+  $comprimento = mysqli_real_escape_string($conexao,$_REQUEST['Comprimento']);
+	$sobre = mysqli_real_escape_string($conexao,$_REQUEST['Sobre']);
+	$imagem1 = upload_file($_FILES['imagem1']);
+	$imagem2 = upload_file($_FILES['imagem2']);
+	$imagem3 = upload_file($_FILES['imagem3']);
+	$imagem4 = upload_file($_FILES['imagem4']);
+	$usuario = $_SESSION['id'];
+
+
 
 	
-    $sql = "INSERT INTO produto (Nome_Produto, Cor, Altura, Largura, Comprimento) VALUES ('$nome','$cor', '$altura', '$largura', '$comprimento');";
-    $conexao->query($sql);
+		$sql = "INSERT INTO produto (Nome_Produto, Cor, Altura, Largura, Comprimento, Sobre, Id_Usuario) VALUES ('$nome','$cor', '$altura', '$largura', '$comprimento', '$sobre', '$usuario');";
+		$sql .= "INSERT INTO fotos (Imagem, Id_Produto) VALUES ('$imagem1', (select MAX(Id_Produto) FROM produto));";
+		$sql .= "INSERT INTO fotos (Imagem, Id_Produto) VALUES ('$imagem2', (select MAX(Id_Produto) FROM produto));";
+		$sql .= "INSERT INTO fotos (Imagem, Id_Produto) VALUES ('$imagem3', (select MAX(Id_Produto) FROM produto));";
+		$sql .= "INSERT INTO fotos (Imagem, Id_Produto) VALUES ('$imagem4', (select MAX(Id_Produto) FROM produto));";
+
+    $conexao->multi_query($sql);
 		// success
 			if($sql){
-				echo '<script type="application/javascript">alert("Mensagem enviada com sucesso. Aguarde nosso retorno!"); window.location.href ="/index.php"; </script>';
+				echo '<script type="application/javascript">alert("Produto publicado com sucesso!");  </script>';
 			}else{
 				echo '<script type="application/javascript">alert("Houve um problema. Tente novamente...".mysql_error()); window.location.href ="/index.php";</script>';
 			}
-		}
+			// window.location.href ="/index.php";
 ?>
