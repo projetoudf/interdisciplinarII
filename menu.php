@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #F7D3E1; box-shadow: 1px 1px 9px 3px rgba(41,41,41,.25);">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top " style="background-color: #F7D3E1; box-shadow: 1px 1px 9px 3px rgba(41,41,41,.25);">
   <a class="navbar-brand" href="#"><i class="fas fa-box-open"></i></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -6,7 +6,7 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="/index.php">Início <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
@@ -28,7 +28,10 @@
       <li class="nav-item">
         <a class="btn btn-info" href="/produto/incluirProduto.php">Incluir Produto <i class="fas fa-plus"></i></a>
       </li>
-      <li class="nav-item">
+      </ul>
+      <ul class="navbar-nav">
+
+      <li class="nav-item float-right">
         <a class="nav-link" href="/logout.php"><i class="fas fa-sign-out-alt"></i> Sair</a>
       </li>
       <?php } ?>
