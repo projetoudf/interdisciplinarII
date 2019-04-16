@@ -15,9 +15,12 @@
       <li class="nav-item">
         <a class="nav-link" href="/contato/contato.php">Contato</a>
       </li>
+      <?php if (!isset($_SESSION['Email'])){ ?>
       <li class="nav-item">
         <a class="nav-link" data-toggle="modal" data-target="#login_modal" style="cursor:pointer;"><i class="fas fa-lock"></i></a>
       </li>
+      <?php } ?>
+
       <?php if (isset($_SESSION['Email'])){ ?>
       <li class="nav-item">
         <a class="nav-link" href="/contato/mensagens.php">Mensagens <i class="far fa-comment-dots"></i></a>

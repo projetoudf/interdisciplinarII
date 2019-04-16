@@ -34,7 +34,7 @@
         <div class="container">
             <div class="row">
                 <div class="form-group col-6">
-                    <label>Nome</label>
+                    <label>Título</label>
                     <input type="text" name="Nome_Produto" class="form-control" required>
                 </div>
                 <div class="form-group col-6">
