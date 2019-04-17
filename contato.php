@@ -49,7 +49,7 @@
          <button type="submit" class="btn btn-primary mr-auto">Enviar</button>
 		 </div>
 </div>
-
+<br>
         <?php include "footer.php";
       ?>
     <!-- Optional JavaScript -->

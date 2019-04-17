@@ -27,7 +27,7 @@ $nome = mysqli_real_escape_string($conexao,$_REQUEST['Nome_Produto']);
     $conexao->multi_query($sql);
 		// success
 			if($sql){
-				echo '<script type="application/javascript">alert("Produto publicado com sucesso!");  window.location.href ="/index.php"; </script>';
+				echo '<script type="application/javascript">alert("Produto publicado com sucesso!");   </script>';
 			}else{
 				echo '<script type="application/javascript">alert("Houve um problema. Tente novamente...".mysql_error()); window.location.href ="/index.php";</script>';
 			}
