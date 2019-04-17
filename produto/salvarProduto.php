@@ -3,7 +3,7 @@ session_start();
 require "../conexao.php";
 include "../funcoes.php";
 
-$nome = mysqli_real_escape_string($conexao,$_REQUEST['Nome_Produto']);
+	$nome = mysqli_real_escape_string($conexao,$_REQUEST['Nome_Produto']);
 	$cor = mysqli_real_escape_string($conexao,$_REQUEST['Cor']); 
 	$altura = mysqli_real_escape_string($conexao,$_REQUEST['Altura']);
   $largura = mysqli_real_escape_string($conexao,$_REQUEST['Largura']);

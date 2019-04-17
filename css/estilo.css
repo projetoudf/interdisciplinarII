@@ -25,8 +25,6 @@ body {
     background-color: #ee244a;
     border-color: #ee244a;
   }
-  242 82 112
-  238 36 74
   .btn-pink:focus, .btn-pink.focus {
     box-shadow: 0 0 0 0.2rem rgba(238, 36, 74, 0.5);
   }

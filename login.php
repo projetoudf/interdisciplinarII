@@ -1,6 +1,6 @@
 <?php
-require_once "conexao.php";
-require_once "funcoes.php";
+include_once "conexao.php";
+include_once "funcoes.php";
 
 $usuario = mysqli_real_escape_string($conexao,$_POST['email']);
 $senha = mysqli_real_escape_string($conexao,make_hash($_POST['senha']));

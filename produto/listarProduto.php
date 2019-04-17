@@ -50,7 +50,7 @@ while($row = $res->fetch_assoc()) :
     <span class="align-bottom mt-auto mb-1 ml-auto">
       <button type="button" class="btn btn-pink"><i class="far fa-thumbs-up"></i> Gostei!</button>
       <?php if (isset($_SESSION['Email'])): ?>
-      <button type="button" class="btn btn-warning">Editar</button>
+      <a href="produto/editarProduto.php?Id_Produto=<?php echo $row['Id_Produto']?>" class="btn btn-warning"><i class="far fa-edit fa-md"></i> Editar</a>
       <button onclick="if(confirm('Tem certeza que deseja excluir o ANÚNCIO <?php echo $row['Nome_Produto'];?>')){location.href='produto/excluirProduto.php?Id_Produto=<?php echo $row['Id_Produto'];?>';}else{false;}"  class="btn btn-dark"><i class="fas fa-trash-alt"></i></button>
           <?php endif; ?>
     </span>
@@ -67,7 +67,7 @@ while($row = $res->fetch_assoc()) :
     <span class="align-bottom mt-auto mb-1 mr-auto">
       <button type="button" class="btn btn-pink"><i class="far fa-thumbs-up"></i> Gostei!</button>
       <?php if (isset($_SESSION['Email'])): ?>
-      <button type="button" class="btn btn-warning">Editar</button>
+      <a href="produto/editarProduto.php?Id_Produto=<?php echo $row['Id_Produto']?>" class="btn btn-warning"><i class="far fa-edit fa-md"></i> Editar</a>
       <button onclick="if(confirm('Tem certeza que deseja excluir o ANÚNCIO <?php echo $row['Nome_Produto'];?>')){location.href='produto/excluirProduto.php?Id_Produto=<?php echo $row['Id_Produto'];?>';}else{false;}"  class="btn btn-dark"><i class="fas fa-trash-alt"></i></button>
       <?php endif; ?>
     </span>

@@ -22,18 +22,47 @@
   <title>Pingo de Amor</title>
 
   <style>
+    @import url('https://fonts.googleapis.com/css?family=Dancing+Script:700');
+
     .banner {
       height: 60vh;
       width: 100%;
+    }
+    .banner .content{
+    position: absolute;
+    z-index:999;
+    text-align: center;
+    width: 100%;
+    margin-top: 30vh;
+    }
+
+    .banner::after {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 60vh;
+      z-index:99;
       background-image: url("img/title.jpg");
       background-size: cover;
-      background-repeat: no-repeat;
+      opacity: 0.4;
+      margin-top: 50px;
+
     }
 
 
     .carousel-inner>.carousel-item>img {
       width: 100% !important;
       height: 40vh !important;
+
+    }
+    .centered {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Dancing Script', cursive;
 
     }
   </style>
@@ -45,6 +74,9 @@
         include "conexao.php";
       ?>
   <div class="banner sombra">
+    <div class="content">
+      <h1 class="display-1 centered">Pingo de Caixas</h1>
+    </div>
   </div>
 
   <div class="container-fluid">
