@@ -25,7 +25,10 @@
       ?>
 
         <?php
-        $sql = "SELECT * from mensagem";
+        $sql = "SELECT m.*, p.* FROM mensagem AS m
+        INNER JOIN produto AS p
+        ON m.Id_Produto = p.Id_Produto";
+
         $res = $conexao->query($sql);
         $qtd = $res->num_rows;
         ?>
@@ -38,7 +41,7 @@
                 <th scope="col">Nome</th>
                 <th scope="col">Email</th>
                 <th scope="col">Telefone</th>
-                <th scope="col">Tipo</th>
+                <th scope="col">Produto</th>
                 <th scope="col" class="w-50">Mensagem</th>
                 <th scope="col" class="w-10">Excluir</th>
             </tr>
@@ -51,7 +54,7 @@
                 <td><?php echo $row['Nome_Cliente']; ?></td>
                 <td><?php echo $row['Email']; ?></td>
                 <td><?php echo $row['Telefone']; ?></td>
-                <td><?php echo ($row['Id_Produto'] != null) ? $row['Id_Produto'] : "Contato"; ?></td>
+                <td><?php echo ($row['Id_Produto'] != null) ? "<a class=\"modalDetalhes\" href=\"javascript:void(0);\" data-href=\"conteudoProduto.php?Id_Produto=".$row['Id_Produto']."\">". $row['Nome_Produto'] ."<i class=\"fas fa-info-circle fa-md\"></i></a>" : "Contato"; ?></td>
                 <td><?php echo $row['Mensagem']; ?></td>
                 <td><?php echo '<button onclick="if(confirm(\'tem certeza que deseja excluir a Mensagem '.$row['Id_Mensagem'].'?\')){location.href=\'excluirMensagem.php?Id_Mensagem='.$row['Id_Mensagem'].'\';}else{false;}"  class=\'btn btn-danger\'><i class="fas fa-trash-alt"></i></button>'; ?></td>
 
@@ -60,14 +63,41 @@
             </tbody>
         </table>
         </div>
+        <div class="modal fade" id="modal_detalhes" tabindex="-1" role="dialog" aria-labelledby="modalInformacoesTitulo" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalInformacoesTitulo">Detalhes</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
 
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <?php include "../footer.php";
       ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+    $(document).ready(function(){
+        $('.modalDetalhes').on('click',function(){
+            var dataURL = $(this).attr('data-href');
+            $('.modal-body').load(dataURL,function(){
+                $('#modal_detalhes').modal({show:true});
+            });
+        });
+    });
+</script>
   </body>
 </html>

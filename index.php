@@ -29,11 +29,14 @@
       width: 100%;
     }
     .banner .content{
-    position: absolute;
-    z-index:999;
-    text-align: center;
-    width: 100%;
-    margin-top: 30vh;
+      position: relative;
+      z-index:999;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);     
+      font-family: 'Dancing Script', cursive;
+
     }
 
     .banner::after {
@@ -44,27 +47,18 @@
       width: 100%;
       height: 60vh;
       z-index:99;
-      background-image: url("img/title.jpg");
+      background-image: url("backgrounds/title.jpg");
       background-size: cover;
       opacity: 0.4;
       margin-top: 50px;
 
     }
-
-
     .carousel-inner>.carousel-item>img {
       width: 100% !important;
       height: 40vh !important;
 
     }
-    .centered {
-      position: relative;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-family: 'Dancing Script', cursive;
 
-    }
   </style>
 
 </head>
@@ -75,7 +69,7 @@
       ?>
   <div class="banner sombra">
     <div class="content">
-      <h1 class="display-1 centered">Pingo de Caixas</h1>
+      <p class="display-1" style="text-shadow: 3px 3px 10px rgba(0,0,0,1) !important;">Pingo de Caixas</p>
     </div>
   </div>
 
@@ -83,20 +77,55 @@
     <?php include ($_SERVER['DOCUMENT_ROOT']."/produto/listarProduto.php"); ?>
   </div>
   <br>
+<!-- Modal Gostei Deste - Enviar Mensagem -->
 
+<div class="modal fade" id="gostei_deste" tabindex="-1" role="dialog" aria-labelledby="modalInformacoesTitulo"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+          <div class="modal-content">
+              <form action="produto/enviarMensagem.php" method="POST">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="modalInformacoesTitulo">Enviar Mensagem</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Fechar</button>
+                      <button type="submit" class="btn btn-success">Enviar</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+
+
+<!-- footer -->
   <?php 
         include "footer.php";
       ?>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js">
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
   </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  <script>    
+    $(document).ready(function () {
+        $('.gosteiDeste').on('click', function () {
+            var dataURL = $(this).attr('data-href');
+            $('.modal-body').load(dataURL, function () {
+                $('#gostei_deste').modal({show: true});
+            });
+        });
+    });
   </script>
 </body>
 

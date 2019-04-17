@@ -15,9 +15,8 @@
     <link rel="stylesheet" href="/css/estilo.css">
     <style>
       body{
-        background-image: url("img/flowers.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
+        background-image: url("backgrounds/sakura.png");
+        background-repeat: repeat;
       }
     </style>
     

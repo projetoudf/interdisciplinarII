@@ -1,4 +1,3 @@
-<script>
         $(document).ready(function(){
         var maxChars = $(".limiteDeCaracteres");
             var max_length = maxChars.attr('maxlength');
@@ -9,4 +8,3 @@
                 });
             }
         });
-    </script>

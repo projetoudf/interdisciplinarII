@@ -48,7 +48,7 @@ while($row = $res->fetch_assoc()) :
       <?php echo $row['Largura']; ?>, Comprimento: <?php echo $row['Comprimento']; ?></p>
     <p> <?php echo $row['Sobre']; ?></p>
     <span class="align-bottom mt-auto mb-1 ml-auto">
-      <button type="button" class="btn btn-pink"><i class="far fa-thumbs-up"></i> Gostei!</button>
+      <a href="javascript:void(0);" data-href="produto/enviarMensagem.php?Id_Produto='<?php echo $row['Id_Produto']?>'" class="btn btn-pink gosteiDeste"><i class="far fa-thumbs-up"></i> Gostei!</a>
       <?php if (isset($_SESSION['Email'])): ?>
       <a href="produto/editarProduto.php?Id_Produto=<?php echo $row['Id_Produto']?>" class="btn btn-warning"><i class="far fa-edit fa-md"></i> Editar</a>
       <button onclick="if(confirm('Tem certeza que deseja excluir o ANÚNCIO <?php echo $row['Nome_Produto'];?>')){location.href='produto/excluirProduto.php?Id_Produto=<?php echo $row['Id_Produto'];?>';}else{false;}"  class="btn btn-dark"><i class="fas fa-trash-alt"></i></button>
@@ -65,8 +65,7 @@ while($row = $res->fetch_assoc()) :
       <?php echo $row['Largura']; ?>, Comprimento: <?php echo $row['Comprimento']; ?></p>
     <p> <?php echo $row['Sobre']; ?></p>
     <span class="align-bottom mt-auto mb-1 mr-auto">
-      <button type="button" class="btn btn-pink"><i class="far fa-thumbs-up"></i> Gostei!</button>
-      <?php if (isset($_SESSION['Email'])): ?>
+      <a href="javascript:void(0);" data-href="produto/enviarMensagem.php?Id_Produto=<?php echo $row['Id_Produto']?>" class="btn btn-pink gosteiDeste"><i class="far fa-thumbs-up"></i> Gostei!</a>      <?php if (isset($_SESSION['Email'])): ?>
       <a href="produto/editarProduto.php?Id_Produto=<?php echo $row['Id_Produto']?>" class="btn btn-warning"><i class="far fa-edit fa-md"></i> Editar</a>
       <button onclick="if(confirm('Tem certeza que deseja excluir o ANÚNCIO <?php echo $row['Nome_Produto'];?>')){location.href='produto/excluirProduto.php?Id_Produto=<?php echo $row['Id_Produto'];?>';}else{false;}"  class="btn btn-dark"><i class="fas fa-trash-alt"></i></button>
       <?php endif; ?>
@@ -110,3 +109,4 @@ while($row = $res->fetch_assoc()) :
     endif; 
     $count++;
   endwhile; ?>
+
