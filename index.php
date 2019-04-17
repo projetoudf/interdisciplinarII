@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <title>Pingo de Amor</title>
+  <title>La Caixa de Papel</title>
 
   <style>
     @import url('https://fonts.googleapis.com/css?family=Dancing+Script:700');
@@ -69,7 +69,7 @@
       ?>
   <div class="banner sombra">
     <div class="content">
-      <p class="display-1" style="text-shadow: 3px 3px 10px rgba(0,0,0,1) !important;">Pingo de Caixas</p>
+      <p class="display-1" style="text-shadow: 3px 3px 10px rgba(0,0,0,1) !important;">La Caixa de Papel</p>
     </div>
   </div>
 
@@ -117,6 +117,9 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
   <script>    
     $(document).ready(function () {
         $('.gosteiDeste').on('click', function () {
