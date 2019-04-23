@@ -19,6 +19,9 @@
       <li class="nav-item">
         <a class="nav-link" data-toggle="modal" data-target="#login_modal" style="cursor:pointer;"><i class="fas fa-lock"></i></a>
       </li>
+      <li class="nav-item">
+      <a class="text-success" target="_blank" rel="noopener noreferrer" href="https://wa.me/556182598294"><i id="whatsapp" class="fab fa-whatsapp fa-2x"></i></span></a>
+      </li>
       <?php } ?>
 
       <?php if (isset($_SESSION['Email'])){ ?>

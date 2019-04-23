@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <title>La Caixa de Papel</title>
+  <title>Caixas da Tati</title>
 
   <style>
     @import url('https://fonts.googleapis.com/css?family=Dancing+Script:700');
@@ -69,7 +69,7 @@
       ?>
   <div class="banner sombra">
     <div class="content">
-      <p class="display-1" style="text-shadow: 3px 3px 10px rgba(0,0,0,1) !important;">La Caixa de Papel</p>
+      <p class="display-1" style="text-shadow: 3px 3px 10px rgba(0,0,0,1) !important;">Caixas da Tati</p>
     </div>
   </div>
 

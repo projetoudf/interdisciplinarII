@@ -27,7 +27,7 @@ include "../funcoes.php";
     $conexao->multi_query($sql);
 		// success
 			if($sql){
-				echo '<script type="application/javascript">alert("Produto publicado com sucesso!");   </script>';
+				echo '<script type="application/javascript">alert("Produto publicado com sucesso!"); window.location.href ="/index.php";  </script>';
 			}else{
 				echo '<script type="application/javascript">alert("Houve um problema. Tente novamente...".mysql_error()); window.location.href ="/index.php";</script>';
 			}

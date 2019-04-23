@@ -4,7 +4,7 @@ include ($_SERVER['DOCUMENT_ROOT']."/conexao.php");
 function make_hash($str){
   return sha1(md5($str));
 }
-$p = make_hash("1");
+$p = make_hash("pingolindo");
 echo $p;
 // Função para renomear as imagens e salvar na pasta "img"
 function upload_file($file)
