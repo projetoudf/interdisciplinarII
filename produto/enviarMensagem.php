@@ -48,3 +48,4 @@ if (isset($_POST["mensagem"])) {
     }else{
         echo '<script type="application/javascript">alert("Não foi possível enviar a mensagem. Tente novamente..."); window.location.href ="index.php";;</script>';
     }
+}

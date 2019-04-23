@@ -98,7 +98,7 @@
 
                   </div>
                   <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Fechar</button>
+                      <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal" aria-hidden="true">Fechar</button>
                       <button type="submit" class="btn btn-success">Enviar</button>
                   </div>
               </form>
