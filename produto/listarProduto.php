@@ -119,18 +119,21 @@ if($count % 2 == 0): ?>
   $sql = "SELECT *
           FROM produto
           ORDER BY Id_Produto WHERE Id_Produto < $ultimo DESC LIMIT 5;";
+          $total = mysqli_query($conexao,"SELECT COUNT(*) as tot from produto")->fetch_assoc();
 
   echo '<div class="text-xs-center">
-          <ul class="pagination justify-content-center">
-          <li class="page-item"><a class="page-link" href=index.php?page='.($_REQUEST['page']+5).'>Anterior</a></li>';
-          $total = mysqli_query($conexao,"SELECT COUNT(*) as tot from produto")->fetch_assoc();
+          <ul class="pagination justify-content-center">';
+          if ($_REQUEST['page'] != $total['tot']){
+            echo '<li class="page-item"><a class="page-link" href=index.php?page='.($_REQUEST['page']+5).'>Anterior</a></li>';
+          }
           $numero = 1;
             while ($total['tot'] > 0) {
             echo '<li class="page-item"><a class="page-link" href=index.php?page='.$total['tot'].'>'.$numero.'</a></li>';
             $numero++;
             $total['tot'] = $total['tot'] - 5;
           }
-
-          echo '<li class="page-item"><a class="page-link" href=index.php?page='.($_REQUEST['page']-5).'>Próximo</a></li>
-          </ul>
+          if (($_REQUEST['page'] - 5) > 0 ){
+            echo '<li class="page-item"><a class="page-link" href=index.php?page='.($_REQUEST['page']-5).'>Próximo</a></li>';
+          }
+          echo '</ul>
         </div>';
