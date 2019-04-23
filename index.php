@@ -34,7 +34,7 @@
       text-align: center;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);     
+      transform: translate(-50%, -50%);
       font-family: 'Dancing Script', cursive;
 
     }
@@ -76,6 +76,10 @@
   <div class="container-fluid">
     <?php include ($_SERVER['DOCUMENT_ROOT']."/produto/listarProduto.php"); ?>
   </div>
+
+  <span id="page" style="display:none">1</span>
+  <span id="trigger" style="display:none">true</span>
+
   <br>
 <!-- Modal Gostei Deste - Enviar Mensagem -->
 
@@ -104,7 +108,7 @@
 
 
 <!-- footer -->
-  <?php 
+  <?php
         include "footer.php";
       ?>
   <!-- Optional JavaScript -->
@@ -120,7 +124,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-  <script>    
+  <script>
     $(document).ready(function () {
         $('.gosteiDeste').on('click', function () {
             var dataURL = $(this).attr('data-href');
@@ -130,6 +134,53 @@
         });
     });
   </script>
+
+  <script>
+              $(document).ready(function () {
+                  $(window).scroll(function (event) {
+                      if ($('body').height() <= ($(window).height() + 400 + $(window).scrollTop())) {
+                          getPagination($("#page").html());
+                      }
+                  });
+              });
+              function getPagination(pg) {
+                  if ($("#trigger").html() === "true") {
+                      $("#trigger").html("false");
+                      $("#res").fadeTo("slow", 0.3);
+                      setTimeout(function () {
+                          $.ajax({
+                              type: "POST",
+                              url: "actions.php",
+                              data: {
+                                  exec: 'scroll',
+                                  pg: pg
+                              },
+                              dataType: 'json',
+                              processData: true,
+                              success: function (data) {
+                                  if (data.results !== "") {
+                                      $("#res").append(data.results);
+                                      setTimeout(function () {
+                                          if (data.totalItens < 5) {
+                                              $("#trigger").html("false");
+                                          }
+                                          else {
+                                              $("#trigger").html("true");
+                                          }
+                                          $("#page").html(data.pg);
+                                      }, 500);
+                                  }
+                                  else {
+                                      $("#res").append('<div class="col-md-12"><h3>Sem Mais Resultados...</h3></div>');
+                                  }
+                                  $("#res").fadeTo("slow", 1);
+                              }
+                          });
+                      }, 1000);
+                  }
+              }
+              getPagination(1);
+          </script>
 </body>
 
 </html>

@@ -2,22 +2,26 @@
 
 $sql = "SELECT *
         FROM produto
-        ORDER BY Id_Produto DESC;";
-
-$res = $conexao->query($sql);
+        WHERE Id_Produto <= '".$_REQUEST['page']."'
+        ORDER BY Id_Produto  DESC LIMIT 5;";
 $count = 0;
+$res = $conexao->query($sql);
 while($row = $res->fetch_assoc()) :
     $sqlImg = mysqli_query($conexao,"SELECT Imagem FROM fotos WHERE Id_Produto = ".$row['Id_Produto']);
+
 ?>
-<?php if($count % 2 == 0): ?>
-<div class="row my-1 sombra">
+<?php
+
+if($count % 2 == 0): ?>
+<div class="row my-2 sombra">
+
   <div class="col-sm-5 border">
     <div id="carousel<?php echo $row['Id_Produto']; ?>" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <?php
             $contador = 0;
             while($img = $sqlImg->fetch_assoc()){
-              echo '<div class="carousel-item '; 
+              echo '<div class="carousel-item ';
                 if ($contador > 0):
                   echo " ";
                 else:
@@ -57,7 +61,7 @@ while($row = $res->fetch_assoc()) :
   </div>
 </div>
           <?php else: ?>
-  <div class="row my-1 sombra">
+  <div class="row my-2 sombra">
 
   <div class="col-sm-7 border d-flex flex-column">
     <h2 class="display-4"><?php echo $row['Nome_Produto']; ?></h2>
@@ -78,7 +82,7 @@ while($row = $res->fetch_assoc()) :
         <?php
             $contador = 0;
             while($img = $sqlImg->fetch_assoc()):
-              echo '<div class="carousel-item '; 
+              echo '<div class="carousel-item ';
                 if ($contador > 0):
                   echo " ";
                 else:
@@ -106,7 +110,27 @@ while($row = $res->fetch_assoc()) :
 
 </div>
     <?php
-    endif; 
+    endif;
     $count++;
-  endwhile; ?>
+    $ultimo = $row['Id_Produto'];
+  endwhile;
 
+
+  $sql = "SELECT *
+          FROM produto
+          ORDER BY Id_Produto WHERE Id_Produto < $ultimo DESC LIMIT 5;";
+
+  echo '<div class="text-xs-center">
+          <ul class="pagination justify-content-center">
+          <li class="page-item"><a class="page-link" href=index.php?page='.($_REQUEST['page']+5).'>Anterior</a></li>';
+          $total = mysqli_query($conexao,"SELECT COUNT(*) as tot from produto")->fetch_assoc();
+          $numero = 1;
+            while ($total['tot'] > 0) {
+            echo '<li class="page-item"><a class="page-link" href=index.php?page='.$total['tot'].'>'.$numero.'</a></li>';
+            $numero++;
+            $total['tot'] = $total['tot'] - 5;
+          }
+
+          echo '<li class="page-item"><a class="page-link" href=index.php?page='.($_REQUEST['page']-5).'>Próximo</a></li>
+          </ul>
+        </div>';
