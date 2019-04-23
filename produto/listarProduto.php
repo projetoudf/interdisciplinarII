@@ -156,8 +156,8 @@
 <nav>
   <ul class="pagination justify-content-center pagination-lg">
         <?php
-        echo '<li class="page-item"><a class="page-link" href="/index.php?page=1">Primeira</a></li> ';
-        echo '<li class="page-item"><a class="page-link" href="/index.php?page='.$anterior.'" aria-label="Anterior">
+        echo '<li class="page-item"><a class="page-link text-danger" href="/index.php?page=1">Primeira</a></li> ';
+        echo '<li class="page-item"><a class="page-link text-danger" href="/index.php?page='.$anterior.'" aria-label="Anterior">
                 <span aria-hidden="true">&laquo;</span>
                 <span class="sr-only">Anterior</span>
               </a></li>';
@@ -168,14 +168,14 @@
     */
    for($i = $pagina-$exibir; $i <= $pagina-1; $i++){
        if($i > 0)
-        echo '<li class="page-item"><a class="page-link" href="?page='.$i.'"> '.$i.' </a></li>';
+        echo '<li class="page-item"><a class="page-link text-danger" href="?page='.$i.'"> '.$i.' </a></li>';
   }
 
         echo '<li class="page-item active"><a class="page-link" href="?page='.$pagina.'">'.$pagina.'</a></li>';
 
   for($i = $pagina+1; $i < $pagina+$exibir; $i++){
        if($i <= $totalPagina)
-        echo '<li class="page-item"><a class="page-link" href="?page='.$i.'"> '.$i.' </a></li>';
+        echo '<li class="page-item"><a class="page-link text-danger" href="?page='.$i.'"> '.$i.' </a></li>';
   }
 
    /**
@@ -187,8 +187,8 @@
 
     ?>
     <?php 
-    echo '<li class="page-item"><a class="page-link" href="index.php?page='.$posterior.'">
+    echo '<li class="page-item"><a class="page-link text-danger" href="index.php?page='.$posterior.'">
           <span aria-hidden="true">&raquo;</span>
           <span class="sr-only">Próximo</span></a></li>';
-    echo "<li class=\"page-item\"><a class=\"page-link\" href=\"?page=$totalPagina\">última</a></li></ul>";
+    echo "<li class=\"page-item\"><a class=\"page-link text-danger\" href=\"?page=$totalPagina\">última</a></li></ul>";
     ?>
