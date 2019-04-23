@@ -1,5 +1,5 @@
 <?php
-include "/conexao.php";
+include ($_SERVER['DOCUMENT_ROOT']."/conexao.php");
 //função para criptografar a senha
 function make_hash($str){
   return sha1(md5($str));
