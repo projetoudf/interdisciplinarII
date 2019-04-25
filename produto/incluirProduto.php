@@ -83,10 +83,8 @@
                 <p class="ml-auto" style="font-size: 0.7rem;">*as fotos devem ter a mesma proporção! (preferencialmente deitadas!)</p>
             </div>    <div>
             <div class="form-group">
-            <button type="submit" class="btn btn-lg btn-danger ml-auto">Cancelar</button>
-
+                <a href="/index.php" class="btn btn-lg btn-danger ml-auto">Cancelar</a>
                 <button type="submit" class="btn btn-lg btn-primary float-right">Enviar</button>
-
             </div>
     </form>
 
