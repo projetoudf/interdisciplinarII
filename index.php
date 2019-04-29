@@ -29,6 +29,7 @@
       width: 100%;
       background-image: url("backgrounds/title.jpg");
       background-size: cover;
+      background-position: 50% 50%;
     }
 
     .carousel-inner>.carousel-item>img {
