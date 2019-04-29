@@ -1,6 +1,7 @@
 <?php
     require "../conexao.php";
     $sql = "DELETE FROM fotos WHERE Id_Produto=" . $_REQUEST["Id_Produto"].";";
+    $sql.= "DELETE FROM mensagem WHERE Id_Produto=". $_REQUEST["Id_Produto"].";";
     $sql.= "DELETE FROM produto WHERE Id_Produto=". $_REQUEST["Id_Produto"].";";
     
     $res = $conexao->multi_query($sql) or die($conexao->error);

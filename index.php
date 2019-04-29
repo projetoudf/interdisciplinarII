@@ -27,32 +27,10 @@
     .banner {
       height: 60vh;
       width: 100%;
-    }
-    .banner .content{
-      position: relative;
-      z-index:999;
-      text-align: center;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-family: 'Dancing Script', cursive;
-
-    }
-
-    .banner::after {
-      content: "";
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      width: 100%;
-      height: 60vh;
-      z-index:99;
       background-image: url("backgrounds/title.jpg");
       background-size: cover;
-      opacity: 0.4;
-      margin-top: 50px;
-
     }
+
     .carousel-inner>.carousel-item>img {
       width: 100% !important;
       height: 40vh !important;
@@ -68,9 +46,7 @@
         include "conexao.php";
       ?>
   <div class="banner sombra">
-    <div class="content">
-      <p class="display-1" style="text-shadow: 3px 3px 10px rgba(0,0,0,1) !important;">Caixas da Tati</p>
-    </div>
+
   </div>
 
   <div class="container-fluid">
@@ -135,52 +111,7 @@
     });
   </script>
 
-  <script>
-              $(document).ready(function () {
-                  $(window).scroll(function (event) {
-                      if ($('body').height() <= ($(window).height() + 400 + $(window).scrollTop())) {
-                          getPagination($("#page").html());
-                      }
-                  });
-              });
-              function getPagination(pg) {
-                  if ($("#trigger").html() === "true") {
-                      $("#trigger").html("false");
-                      $("#res").fadeTo("slow", 0.3);
-                      setTimeout(function () {
-                          $.ajax({
-                              type: "POST",
-                              url: "actions.php",
-                              data: {
-                                  exec: 'scroll',
-                                  pg: pg
-                              },
-                              dataType: 'json',
-                              processData: true,
-                              success: function (data) {
-                                  if (data.results !== "") {
-                                      $("#res").append(data.results);
-                                      setTimeout(function () {
-                                          if (data.totalItens < 5) {
-                                              $("#trigger").html("false");
-                                          }
-                                          else {
-                                              $("#trigger").html("true");
-                                          }
-                                          $("#page").html(data.pg);
-                                      }, 500);
-                                  }
-                                  else {
-                                      $("#res").append('<div class="col-md-12"><h3>Sem Mais Resultados...</h3></div>');
-                                  }
-                                  $("#res").fadeTo("slow", 1);
-                              }
-                          });
-                      }, 1000);
-                  }
-              }
-              getPagination(1);
-          </script>
+  
 </body>
 
 </html>
