@@ -17,7 +17,7 @@
     <!-- Icones -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>Caixas da Tati</title>
+    <title>Pingo de Amor</title>
   </head>
   <body>
       <?php include "../menu.php";
@@ -25,9 +25,7 @@
       ?>
 
         <?php
-        $sql = "SELECT m.*, p.* FROM mensagem AS m
-        INNER JOIN produto AS p
-        ON m.Id_Produto = p.Id_Produto";
+        $sql = "SELECT * FROM mensagem";
 
         $res = $conexao->query($sql);
         $qtd = $res->num_rows;
@@ -54,7 +52,7 @@
                 <td><?php echo $row['Nome_Cliente']; ?></td>
                 <td><?php echo $row['Email']; ?></td>
                 <td><?php echo $row['Telefone']; ?></td>
-                <td><?php echo ($row['Id_Produto'] != null) ? "<a class=\"modalDetalhes\" href=\"javascript:void(0);\" data-href=\"conteudoProduto.php?Id_Produto=".$row['Id_Produto']."\">". $row['Nome_Produto'] ."<i class=\"fas fa-info-circle fa-md\"></i></a>" : "Contato"; ?></td>
+                <td><?php echo ($row['Id_Produto'] != null) ? "<a class=\"modalDetalhes\" href=\"javascript:void(0);\" data-href=\"conteudoProduto.php?Id_Produto=".$row['Id_Produto']."\"> Informações <i class=\"fas fa-info-circle fa-md\"></i></a>" : "Contato"; ?></td>
                 <td><?php echo $row['Mensagem']; ?></td>
                 <td><?php echo '<button onclick="if(confirm(\'tem certeza que deseja excluir a Mensagem '.$row['Id_Mensagem'].'?\')){location.href=\'excluirMensagem.php?Id_Mensagem='.$row['Id_Mensagem'].'\';}else{false;}"  class=\'btn btn-danger\'><i class="fas fa-trash-alt"></i></button>'; ?></td>
 
